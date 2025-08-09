@@ -1,0 +1,16 @@
+[package]
+name = "clock-bot"
+authors = ["karin0 <karin0@gmx.com>"]
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+log = "0.4"
+ureq = { version = "3", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+pretty_env_logger = { git = "https://github.com/karin0/pretty-env-logger.git" }
+
+[profile.release]
+lto = true
+strip = true
